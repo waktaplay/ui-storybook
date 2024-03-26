@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './filter.css'
 import arrow_small_down from './assets/arrow_small_down.svg'
 
@@ -18,9 +18,7 @@ interface FilterProps {
  */
 export const Filter = ({ value, ...props }: FilterProps) => {
   const [openSelectOption, setOpenSelectOption] = useState<boolean>(false)
-  const toggleOpenSelectOption = () => {
-    setOpenSelectOption(!openSelectOption)
-  }
+  const inputRef = useRef<HTMLInputElement>(null)
 
   // select box open 시 스크롤 disable
   useEffect(() => {
@@ -36,24 +34,21 @@ export const Filter = ({ value, ...props }: FilterProps) => {
     }
   }, [openSelectOption])
 
-  // select box 외부 클릭시 select box close
+  // select box 외부 클릭시 options close
   useEffect(() => {
-    const clickDetect = (e: MouseEvent) => {
-      const filterElement = (e.target as HTMLDivElement).offsetParent
-      if (filterElement?.id === 'filter-container') return
-      setOpenSelectOption(false)
-    }
-    window.addEventListener('click', clickDetect)
-    // unmounted 시 초기화
-    return () => {
-      window.removeEventListener('click', clickDetect)
-    }
+    if (!openSelectOption) return
+    inputRef.current?.focus()
   }, [openSelectOption])
 
   return (
     <div className="filter-container" id="filter-container">
       <button
-        onClick={toggleOpenSelectOption}
+        onMouseDown={() =>
+          // blur 이벤트 순서 이슈로 timeout 추가
+          setTimeout(() => {
+            !openSelectOption && setOpenSelectOption(true)
+          })
+        }
         className={[
           `filter-align`,
           openSelectOption ? 'filter-align--active' : '',
@@ -64,6 +59,8 @@ export const Filter = ({ value, ...props }: FilterProps) => {
         {value}
         <img src={arrow_small_down} alt="" />
       </button>
+      {/* select box 외부 클릭시 options close 를 위한 blur 감지 */}
+      <input onBlur={() => setOpenSelectOption(false)} ref={inputRef} />
     </div>
   )
 }
