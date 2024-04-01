@@ -1,0 +1,48 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+.card-main {
+  display: flex;
+  padding: 16px 15px 24px 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.card-header::after {
+  content: '';
+  height: 1px;
+  align-self: stretch;
+  background-color: rgba(78, 80, 83, 1);
+}
+
+.card-link {
+  font-family: 'pretendard';
+  display: flex;
+  padding: 4px 10px 4px 6px;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.card-link > div,
+img:first-child {
+  margin-right: 8px;
+}
+
+.card-link > img:last-child {
+  margin-left: 4px;
+}
+
+.card-link--on {
+  color: rgba(183, 251, 156, 1);
+}
+
+.card-link--off {
+  color: rgba(145, 145, 145, 1);
+}
