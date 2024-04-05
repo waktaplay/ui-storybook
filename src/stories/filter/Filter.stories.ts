@@ -1,22 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Filter } from './Filter';
+import { FilterAlign } from './FilterAlign';
 
 const meta = {
-  title: 'Filter',
-  component: Filter,
+  title: 'FilterAlign',
+  component: FilterAlign,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  args: { onChange: fn(), value: "Filter" },
-} satisfies Meta<typeof Filter>;
+  args: { onChange: fn() },
+} satisfies Meta<typeof FilterAlign>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Base: Story = {
-  args: {
-    value: 'Filter',
-  },
+
 };

@@ -1,5 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
+/* 콘테이너 */
 .filter-container {
   position: relative;
 }
@@ -10,7 +11,9 @@
   top: 0;
   pointer-events: none;
 }
-.filter-align {
+
+/* 버튼 */
+.filter-button {
   font-family: 'pretendard';
   border: 0;
   border-radius: 6px;
@@ -23,16 +26,18 @@
   gap: 8px;
   font-size: 14px;
 }
-.filter-align:hover {
+.filter-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.filter-align--active,
-.filter-align--active:hover {
+.filter-button--active,
+.filter-button--active:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-.filter-align > img {
+
+/* 화살표 애니메이션 */
+.filter-arrow {
   transition: 0.15s;
 }
-.filter-align--active > img {
+.filter-button--active > .filter-arrow {
   transform: rotate(180deg);
 }

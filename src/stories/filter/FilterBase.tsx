@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { ReactElement, useEffect, useRef, useState } from 'react'
 import './filter.css'
-import arrow_small_down from './assets/arrow_small_down.svg'
 
 interface FilterProps {
   /**
@@ -10,13 +9,13 @@ interface FilterProps {
   /**
    * Filter contetnts
    */
-  value?: string
+  children?: Array<ReactElement | string>
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Filter = ({ value, ...props }: FilterProps) => {
+export const FilterBase = ({ children, ...props }: FilterProps) => {
   const [openSelectOption, setOpenSelectOption] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -36,6 +35,7 @@ export const Filter = ({ value, ...props }: FilterProps) => {
 
   // select box 외부 클릭시 options close
   useEffect(() => {
+    console.log(openSelectOption)
     if (!openSelectOption) return
     inputRef.current?.focus()
   }, [openSelectOption])
@@ -50,14 +50,13 @@ export const Filter = ({ value, ...props }: FilterProps) => {
           })
         }
         className={[
-          `filter-align`,
-          openSelectOption ? 'filter-align--active' : '',
+          `filter-button`,
+          openSelectOption ? 'filter-button--active' : '',
         ].join(' ')}
         {...props}
         id="filter-button"
       >
-        {value}
-        <img src={arrow_small_down} alt="" />
+        {children}
       </button>
       {/* select box 외부 클릭시 options close 를 위한 blur 감지 */}
       <input onBlur={() => setOpenSelectOption(false)} ref={inputRef} />
