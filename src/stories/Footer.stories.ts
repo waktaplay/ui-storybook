@@ -13,7 +13,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Main: Story = {
   args: {
-    connectDiscord: '#',
+    onClickContact: () => {
+      alert('Modal Open!');
+    },
     onClickTerm: () => {
       alert('이용약관 보여주세요');
     },

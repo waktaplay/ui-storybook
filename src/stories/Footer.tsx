@@ -1,15 +1,13 @@
 import './footer.css';
 
-import discord from './assets/discord.svg';
-
 interface FooterProps {
-  connectDiscord: string;
+  onClickContact: () => void;
   onClickTerm: () => void;
   onClickUserInfo: () => void;
 }
 
 export const Footer = ({
-  connectDiscord = '#',
+  onClickContact,
   onClickTerm,
   onClickUserInfo,
 }: FooterProps) => {
@@ -25,9 +23,7 @@ export const Footer = ({
           <p className="divTitle">Contact</p>
 
           <div className="contactWrap">
-            <a href={connectDiscord} className="discordIcon" target="_blank">
-              <img src={discord} alt="discord_icon" /> 문의하기
-            </a>
+            <p onClick={onClickContact}>문의하기</p>
           </div>
         </div>
         <div className="terms">
