@@ -7,7 +7,8 @@ const Card = Object.assign(CardMain, {
   Header: S.CardHeader,
   Title: S.CardTitle,
   Date: S.CardDate,
-  TextFrame: S.CardTextFrame,
+  Divider: S.CardDivider,
+  Body: S.CardBody,
 });
 
 export default Card;
