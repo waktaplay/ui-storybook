@@ -41,3 +41,14 @@
 .filter-button--active > .filter-arrow {
   transform: rotate(180deg);
 }
+
+/* 멤버 필터 */
+.filter_member_container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.filter_member_middel_line {
+  height: 32px;
+  border-left: 1px solid #4e5053;
+}
