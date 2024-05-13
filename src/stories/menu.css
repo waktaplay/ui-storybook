@@ -1,0 +1,39 @@
+.storybook-menus {
+  padding: 4px 0;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #191a1a;
+  font-family: Pretendard;
+}
+
+.menu-item {
+  padding: 14px 24px;
+  gap: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #e5e7ec;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.selected {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.member-item {
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  border-radius: 6px;
+  padding: 6px 8px;
+  background-color: #4e5053;
+  align-items: center;
+  color: #fbfbfb;
+}
