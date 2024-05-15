@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { FilterMember } from './FilterMember';
 
 const meta = {
@@ -9,7 +8,6 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  args: { onChange: fn() },
 } satisfies Meta<typeof FilterMember>;
 
 export default meta;

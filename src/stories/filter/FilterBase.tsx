@@ -3,10 +3,6 @@ import './filter.css'
 
 interface FilterProps {
   /**
-   * On Value Change Handler
-   */
-  onChange?: () => void
-  /**
    * Filter contetnts
    */
   children?: Array<ReactElement | string>

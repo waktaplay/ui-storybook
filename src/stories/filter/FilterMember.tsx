@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './filter.css'
 import people from './../assets/people.svg'
 import { FilterBase } from './FilterBase'
