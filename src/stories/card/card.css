@@ -1,0 +1,126 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/** CONTAINER */
+.card-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 0px 0px 10px 10px;
+  background: rgba(78, 80, 83, 0.3);
+  box-shadow: 0px 12px 90px 0px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(75px);
+  color: #fff;
+
+  font-family: 'pretendard';
+}
+
+.card-border {
+  width: 325px;
+  border-radius: 10px 10px 0px 0px;
+  background: #87ef63;
+  height: 10px;
+}
+
+/** HEADER */
+.card-header {
+  width: 100%;
+  padding: 16px 15px 18px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.card-title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.card-date {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: rgba(233, 233, 233, 1);
+}
+
+.card-textframe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/** DIVIDER */
+.card-divider {
+  display: inline-block;
+  content: '';
+  height: 1px;
+  align-self: stretch;
+  background: #4e5053;
+}
+
+/** BODY */
+.card-body {
+  display: flex;
+  padding: 20px 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/** LINK */
+.card-link {
+  font-family: 'pretendard';
+  box-sizing: border-box;
+  display: flex;
+  padding: 4px 10px 4px 6px;
+  align-items: center;
+  border-radius: 6px;
+  background-color: inherit;
+  color: inherit;
+  user-select: none;
+  border: none;
+}
+
+.card-link:focus {
+  outline: none;
+}
+
+.card-link > p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.16px;
+  margin: 0;
+}
+
+.card-link > div,
+img:first-child {
+  margin-right: 8px;
+}
+
+.card-link > img:last-child {
+  margin-left: 4px;
+}
+
+.card-link--on,
+.card-link--off {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 145%; /* 18.85px */
+  letter-spacing: -0.13px;
+}
+
+.card-link--on {
+  color: rgba(183, 251, 156, 1);
+}
+
+.card-link--off {
+  color: rgba(145, 145, 145, 1);
+}
